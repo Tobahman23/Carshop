@@ -8,22 +8,28 @@ Carshop
 </head>
 <body>
 <script>
+    var volvo = new Bil('Volvo', "volvoxc40.jpeg", 284000, 'xc40', 2017, 'vit');
+    var audi = new Bil('Audi', "audi.jpeg", 1555000, 'r8', 2006, 'vit');
+    var cool = new Bil('Audi', "audi.jpeg", 1555000, 'r8', 2006, 'vit');
 
+const box = document.getElementById('box');
 function Bil(car, image, price, model, year, color){
 this.car = car;
 this.image = image;
-this.price = price;
-this.model = model;
-this.year = year;
-this.color = color;
-for(i = 0; i<6; i++)
+this.price = 'Pris: ' + price;
+this.model = 'Modell: ' +model;
+this.year = 'Lanseringsår: ' + year;
+this.color = 'Färg: ' + color;
+for(i = 0; i<1; i++)
 {
-document.createElement("div");
+let di = document.createElement("div");
 
 let im = document.createElement("img");
-im.setAttribute['id', this.car + 'img'];
-im.setAttribute['src', this.image];
+im.setAttribute['id', this.car + "img"];
+im.src = this.image;
 im.setAttribute['alt', this.car];
+im.style.width = "300px";
+im.style.height = "200px";
 
 let cn = document.createElement("h1");
 cn.setAttribute['id', this.car + 'name'];
@@ -49,9 +55,21 @@ let pr = document.createElement("p");
 pr.setAttribute['id', this.car + 'price'];
 let txtpr = document.createTextNode(this.price);
 pr.appendChild(txtpr);
+
+
+di.appendChild(im);
+di.appendChild(cn);
+di.appendChild(mo);
+di.appendChild(co);
+di.appendChild(ye);
+di.appendChild(pr);
+di.style.display = "inline-block";
+di.style.marginLeft = "20%";
+di.style.fontSize = "large";
+document.body.appendChild(di);
 }
 }
-var volvo = new Bil(Volvo, "volvoxc40.jpeg", 284000, xc40, 2017, vit);
+document.body.style.backgroundColor = "coral    ";  
 </script>
 </body>
 </html>
