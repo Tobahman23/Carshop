@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
 <meta charset="utf-8">
 <title>
@@ -9,6 +9,49 @@ Carshop
 <body>
 <script>
 
+function Bil(car, image, price, model, year, color){
+this.car = car;
+this.image = image;
+this.price = price;
+this.model = model;
+this.year = year;
+this.color = color;
+for(i = 0; i<6; i++)
+{
+document.createElement("div");
+
+let im = document.createElement("img");
+im.setAttribute['id', this.car + 'img'];
+im.setAttribute['src', this.image];
+im.setAttribute['alt', this.car];
+
+let cn = document.createElement("h1");
+cn.setAttribute['id', this.car + 'name'];
+let txt = document.createTextNode(this.car);
+cn.appendChild(txt);
+
+let mo = document.createElement("p");
+mo.setAttribute['id', this.car + 'model'];
+let txtmo = document.createTextNode(this.model);
+mo.appendChild(txtmo);
+
+let co = document.createElement("p");
+co.setAttribute['id', this.car + 'color'];
+let txtco = document.createTextNode(this.color);
+co.appendChild(txtco);
+
+let ye = document.createElement("p");
+ye.setAttribute['id', this.car + 'year'];
+let txtye = document.createTextNode(this.year);
+ye.appendChild(txtye);
+
+let pr = document.createElement("p");
+pr.setAttribute['id', this.car + 'price'];
+let txtpr = document.createTextNode(this.price);
+pr.appendChild(txtpr);
+}
+}
+var volvo = new Bil(Volvo, "volvoxc40.jpeg", 284000, xc40, 2017, vit);
 </script>
 </body>
 </html>
