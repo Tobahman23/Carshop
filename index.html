@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <title>
@@ -8,7 +8,7 @@ Carshop
 </head>
 <body>
 <script>
-    var volvo = new Bil('Volvo', "volvoxc40.jpeg", 284000, 'xc40', 2017, 'vit');
+    var volvo = new Bil('Volvo', "volvoxc40.jpeg", 284000, 'xc40', 2017, 'vit'); //skriver alla bilar med värden som gör att jag inte behöver upprepa kod eller copy pasta kod
     var audi = new Bil('Audi', "audi.jpeg", 1555000, 'r8', 2006, 'vit');
     var mitsu = new Bil('Mitsubishi', "mitsu.jpeg", 240000, 'Outlander', 2001, 'vit');
     var skoda = new Bil('Skoda', "skoda.png", 280000, 'Octavia', 2000, 'silver');
@@ -19,71 +19,75 @@ Carshop
     var chev = new Bil('Chevrolet', "chevrolet.jpeg", 350000, 'Camaro', 1966, 'röd');
     var bug = new Bil('Bugatti', "buggati.jpeg", 35000000, 'Chiron', 2016, 'blå');
 
-const box = document.getElementById('box');
-function Bil(car, image, price, model, year, color){
+function Bil(car, image, price, model, year, color){ //tar emot värden som kan användas på ett effektivt sätt
 this.car = car;
 this.image = image;
 this.price = 'Pris: ' + price;
 this.model = 'Modell: ' +model;
 this.year = 'Lanseringsår: ' + year;
 this.color = 'Färg: ' + color;
-for(i = 0; i<1; i++)
-{
-let di = document.createElement("div");
 
-let im = document.createElement("img");
+for(i = 0; i<1; i++) //fann inte mycket funktion med denna skulle nog egentligen kunna ta bort den då konstruktorn på sätt och vis funkar som en loop ändå
+{
+let di = document.createElement("div"); //skapar en div
+
+let im = document.createElement("img"); //skapar ett img element och ändrar id alt och style på den
 im.setAttribute['id', this.car + "img"];
 im.src = this.image;
 im.setAttribute['alt', this.car];
 im.style.width = "300px";
 im.style.height = "200px";
 
-let cn = document.createElement("h1");
+let cn = document.createElement("h1"); //skapar en h1 och ändrar dess text
 cn.setAttribute['id', this.car + 'name'];
 let txt = document.createTextNode(this.car);
 cn.appendChild(txt);
 
-let mo = document.createElement("p");
+let mo = document.createElement("p"); //skapar en paragraf och ändrar text
 mo.setAttribute['id', this.car + 'model'];
 let txtmo = document.createTextNode(this.model);
 mo.appendChild(txtmo);
 
-let co = document.createElement("p");
+let co = document.createElement("p"); //skapar en parafraf och ändrar text
 co.setAttribute['id', this.car + 'color'];
 let txtco = document.createTextNode(this.color);
 co.appendChild(txtco);
 
-let ye = document.createElement("p");
+let ye = document.createElement("p"); //skapar en parafraf och ändrar text
 ye.setAttribute['id', this.car + 'year'];
 let txtye = document.createTextNode(this.year);
 ye.appendChild(txtye);
 
-let pr = document.createElement("p");
+let pr = document.createElement("p"); //skapar en parafraf och ändrar text
 pr.setAttribute['id', this.car + 'price'];
 let txtpr = document.createTextNode(this.price);
 pr.appendChild(txtpr);
 
 
-di.appendChild(im);
+di.appendChild(im); //lägger till alla element som childs av diven
 di.appendChild(cn);
 di.appendChild(mo);
 di.appendChild(co);
 di.appendChild(ye);
 di.appendChild(pr);
-di.style.display = "inline-block";
+
+di.style.display = "inline-block"; //style för div
 di.style.marginLeft = "20%";
 di.style.fontSize = "large";
 di.style.borderStyle = "solid";
 di.style.borderWidth = "4px";
 di.style.borderColor = "black";
 di.style.marginTop = "2%";
-di.style.backgroundColor = "rgba(150,100,0, .7)";
+di.style.backgroundColor = "rgba(250,0,0, .7)";
 di.style.color = "white";
-document.body.appendChild(di);
+
+document.body.appendChild(di); //lägger till div som child av body
 }
 }
-document.body.style.backgroundImage = "url('back.webp')";
+ 
+document.body.style.backgroundImage = "url('back.jpeg')"; //ändrar background
 document.body.style.backgroundSize = "cover";
+
 </script>
 </body>
 </html>
